@@ -19,6 +19,13 @@ class Scoreboard(Turtle):
         self.goto(0,0)
         self.write(f"GAME OVER", align=ALIGNMENT, font=FONT)
 
+    def reset(self):
+        """Reset the scoreboard for a new game."""
+        self.score = 0
+        self.clear()
+        self.goto(0, 260)
+        self.update_scoreboard()
+
     def increase_score(self):
         self.score += 1
         self.clear()
