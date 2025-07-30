@@ -12,6 +12,7 @@ class Food(Turtle):
         self.refresh()
 
     def refresh(self):
-        random_x = random.randint(-280,280)
-        random_y = random.randint(-280,280)
+        boundary = min(280, 280) - 20  # Or import from main.py constants
+        random_x = random.randint(-boundary, boundary)
+        random_y = random.randint(-boundary, boundary)
         self.goto(random_x, random_y)

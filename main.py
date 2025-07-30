@@ -7,7 +7,7 @@ from food import Food
 # Constants
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
-WALL_BOUNDARY = 280 #This only works if screen size is kept to 600x600, update otherwise
+WALL_BOUNDARY = min(SCREEN_WIDTH, SCREEN_HEIGHT) // 2 - 20  # Dynamic boundary based on screen size
 FOOD_COLLISION_DISTANCE = 20
 TAIL_COLLISION_DISTANCE = 10
 BASE_GAME_SPEED = 0.1
