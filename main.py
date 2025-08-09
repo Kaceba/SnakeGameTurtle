@@ -56,12 +56,15 @@ class SnakeGame:
     def restart_game(self):
         """Restart the game with fresh state."""
         try:
-            self.snake = Snake()
-            self.food = Food()
+            self.snake.reset()
+            self.food.reset()
             self.scoreboard.reset()
+            self.food = Food()
             self.game_is_on = True
             self.paused = False
             self.screen.title("Snake Game")
+            self.setup_controls()
+            self.run()
         except Exception as e:
             print(f"Error restarting game: {e}")
 
@@ -109,10 +112,10 @@ class SnakeGame:
         if not self.paused:
             try:
                 self.snake.move()
-
                 self.check_food_collision()
 
                 if self.check_wall_collision():
+                    self.scoreboard.reset()
                     self.game_over()
                     return
 
