@@ -1,6 +1,6 @@
 # SnakeGameTurtle
 
-A purposefuly over engineerd Snake game implementation in Python using the Turtle graphics library with cool features and improved gameplay experience.
+A purposefully over engineerd Snake game implementation in Python using the Turtle graphics library with cool features and improved gameplay experience.
 
 <img width="748" height="787" alt="image" src="https://github.com/user-attachments/assets/2db5b20a-125b-48cc-b607-d47c61d581e1" />
 
