@@ -12,7 +12,12 @@ class Food(Turtle):
         self.refresh()
 
     def refresh(self):
-        boundary = min(280, 280) - 20  # Or import from main.py constants
-        random_x = random.randint(-boundary, boundary)
-        random_y = random.randint(-boundary, boundary)
+        # Import boundary from main.py to ensure consistency
+        from main import WALL_BOUNDARY
+        random_x = random.randint(-WALL_BOUNDARY, WALL_BOUNDARY)
+        random_y = random.randint(-WALL_BOUNDARY, WALL_BOUNDARY)
         self.goto(random_x, random_y)
+
+    def reset(self):
+        """Reset food to a new random position."""
+        self.refresh()

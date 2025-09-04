@@ -14,6 +14,14 @@ BASE_GAME_SPEED = 0.1
 MIN_GAME_SPEED = 0.05
 SPEED_INCREASE_RATE = 0.003
 
+# Snake constants
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
+
 
 class SnakeGame:
     def __init__(self):
@@ -59,7 +67,6 @@ class SnakeGame:
             self.snake.reset()
             self.food.reset()
             self.scoreboard.reset()
-            self.food = Food()
             self.game_is_on = True
             self.paused = False
             self.screen.title("Snake Game")
@@ -115,7 +122,6 @@ class SnakeGame:
                 self.check_food_collision()
 
                 if self.check_wall_collision():
-                    self.scoreboard.reset()
                     self.game_over()
                     return
 
